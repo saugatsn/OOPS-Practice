@@ -1,12 +1,24 @@
 class Person {
   constructor(name, age) {
+    console.log("Parent Person Class Constructor");
     this.name = name;
     this.age = age;
   }
   talk() {
-    console.log(`Hi, this is ${this.name}`);
+    console.log(`Hi, I am ${this.name}`);
   }
 }
-
-let p1 = new Person("Sagar", 26);
-let p2 = new Person("Samip", 32);
+class Teacher extends Person {
+  constructor(name, age, subject) {
+    console.log("Teacher Class Constructor");
+    super(name, age);
+    this.subject = subject;
+  }
+}
+class Student extends Person {
+  constructor(name, age, marks) {
+    console.log("Student Class Constructor");
+    super(name, age);
+    this.marks = marks;
+  }
+}
